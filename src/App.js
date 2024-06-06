@@ -1,10 +1,9 @@
-import './App.css';
-import Banner from './components/banner/Banner';
+import Banner from './components/banner/banner.js';
 
 function App() {
   return (
     <div className="App">
-     <Banner/>
+      <Banner/>
     </div>
   );
 }
