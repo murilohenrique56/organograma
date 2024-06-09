@@ -1,3 +1,4 @@
+import Botao from "../botao";
 import CampoTexto from "../campoTexto";
 import ListaSuspensa from "../listaSuspensa";
 import "./Formulario.css";
@@ -10,16 +11,22 @@ const Formulario = () => {
     'Gen.G',
     'PPX',
     'TH'
-
   ]
+
+  const aoSalvar = (event) => {
+    event.preventDefault()
+    console.log('Form foi submetido')
+  }
+
   return (
     <section className="formulario">
-      <form>
+      <form onSubmit={aoSalvar}>
         <h2>Preencha os dados para criar o card do colaborador</h2>
-        <CampoTexto label="Nome" placeholder="Digite seu nome" />
-        <CampoTexto label="Cargo" placeholder="Digite seu cargo" />
+        <CampoTexto obrigatorio={true} label="Nome" placeholder="Digite seu nome" />
+        <CampoTexto obrigatorio={true}label="Cargo" placeholder="Digite seu cargo" />
         <CampoTexto label="Imagem" placeholder="Informe o endereço da imagem" />
-        <ListaSuspensa label="Time" itens={times}></ListaSuspensa>
+        <ListaSuspensa obrigatorio={true} label="Time" itens={times}/>
+        <Botao text="Criar card"/>
       </form>
     </section>
   );
