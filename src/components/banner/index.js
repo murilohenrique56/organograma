@@ -4,7 +4,7 @@ function Banner() {
   return (
     <header className="banner">
       <img
-        src="/imagens/banner.png"
+        src="/imagens/valorant-riot-games.webp"
         alt="O banner principal da página do Organograma"
       />
     </header>
